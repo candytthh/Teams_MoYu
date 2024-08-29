@@ -31,12 +31,12 @@ def create_folder_and_file():
     print(f"要创建的记事本文档是{file_name}")
 
     if not os.path.exists(file_path):
-        with open(file_path, 'w') as file:  # 创建空文件  
-            pass  # 不写入任何内容  
-        os.startfile(file_path)  # 使用默认程序打开文本文件
+        with open(file_path, 'w') as file:  # create an empty file  
+            pass  # do not write any content  
+        os.startfile(file_path)  # use default app to open the file
         print("记事本已经打开")
     else:
-        os.startfile(file_path)  # 使用默认程序打开文本文件
+        os.startfile(file_path)  # use default app to open the file
         print("记事本已经打开")
     
 
