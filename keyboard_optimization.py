@@ -28,11 +28,14 @@ def create_folder_and_file():
     #create the path of txt file
     file_name = f"{today_date}.txt"
     file_path = os.path.join(folder_path, file_name)
+    print(f"要创建的记事本文档是{file_name}")
 
-    # if not os.path.exists(file_path)
+    with open(file_path, 'w') as file:  # 创建空文件  
+        pass  # 不写入任何内容  
+    os.startfile(file_path)  # 使用默认程序打开文本文件
+    print("记事本已经打开")
     
-
-
+    # if not os.path.exists(file_path)
     #open txt file th notepad
     os.system(f'notepad"{file_path}"')
 
@@ -46,8 +49,8 @@ def press_keyboard(end_time):
     try:
         # print the end time 
         print(f"程序将在{end_time}结束")
-        print("请迅速切换到一个文本窗口")
-        time.sleep(5) # give you 5 seconds to switch to a txt window, in future optimize to create txt 
+        # print("请迅速切换到一个文本窗口")
+        # time.sleep(5) # give you 5 seconds to switch to a txt window, in future optimize to create txt 
         i=0
 
 
