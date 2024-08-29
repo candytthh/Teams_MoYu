@@ -25,9 +25,16 @@ def create_folder_and_file():
     #caputre today's date and convert to a string
     today_date = datetime.now().strftime("%Y-%m-%d")
 
-    #create the path of txt
+    #create the path of txt file
     file_name = f"{today_date}.txt"
     file_path = os.path.join(folder_path, file_name)
+
+    # if not os.path.exists(file_path)
+    
+
+
+    #open txt file th notepad
+    os.system(f'notepad"{file_path}"')
 
 
         
@@ -73,4 +80,6 @@ if __name__ == "__main__":
     # caculate end time in main function
     end_time = datetime.now() + timedelta(hours=2)
     create_folder_and_file()
+    #wait 2 seconds until it was opend
+    time.sleep(2)
     press_keyboard(end_time)  
