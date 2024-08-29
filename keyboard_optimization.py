@@ -30,14 +30,18 @@ def create_folder_and_file():
     file_path = os.path.join(folder_path, file_name)
     print(f"要创建的记事本文档是{file_name}")
 
-    with open(file_path, 'w') as file:  # 创建空文件  
-        pass  # 不写入任何内容  
-    os.startfile(file_path)  # 使用默认程序打开文本文件
-    print("记事本已经打开")
+    if not os.path.exists(file_path):
+        with open(file_path, 'w') as file:  # 创建空文件  
+            pass  # 不写入任何内容  
+        os.startfile(file_path)  # 使用默认程序打开文本文件
+        print("记事本已经打开")
+    else:
+        os.startfile(file_path)  # 使用默认程序打开文本文件
+        print("记事本已经打开")
+    
 
-    # if not os.path.exists(file_path)
     #open txt file th notepad
-    os.system(f'notepad"{file_path}"')
+    # os.system(f'notepad"{file_path}"')
 
 
         
