@@ -10,7 +10,7 @@ def create_folder_and_file():
     #caputre path of Desktop
     desktop_path = os.path.join(os.path.expanduser("~"), "Desktop")
 
-    #create path of folder whose name is keyboard_record
+    #create path of folder whose name is 'keyboard_record'
     folder_name = "keyboard_record"
     folder_path = os.path.join(desktop_path, folder_name)
 
@@ -34,7 +34,7 @@ def create_folder_and_file():
         pass  # 不写入任何内容  
     os.startfile(file_path)  # 使用默认程序打开文本文件
     print("记事本已经打开")
-    
+
     # if not os.path.exists(file_path)
     #open txt file th notepad
     os.system(f'notepad"{file_path}"')
@@ -49,10 +49,7 @@ def press_keyboard(end_time):
     try:
         # print the end time 
         print(f"程序将在{end_time}结束")
-        # print("请迅速切换到一个文本窗口")
-        # time.sleep(5) # give you 5 seconds to switch to a txt window, in future optimize to create txt 
         i=0
-
 
         while datetime.now() < end_time:
 
@@ -63,6 +60,20 @@ def press_keyboard(end_time):
             print(f"已执行{i}次")
 
             time.sleep(120)  # set time interval for loop
+        else:
+            # save the txt file when while loop is not true
+            pyautogui.hotkey('ctrl', 's')  # save the txt file
+            time.sleep(2) # wait for saving txt
+            os.system(f'taskkill /IM notepad.exe')  # close notepad
+            time.sleep(2)  # wait for notepad to close
+            
+            print("记事本已经关闭")
+
+      
+
+        
+
+
 
 
 
