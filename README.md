@@ -1,2 +1,4 @@
 # Windows_operation
-regular operation of Windows
+
+This reqpo intends to store codes of regular operation of Windows including writing and reading document, blabla etc.
+
